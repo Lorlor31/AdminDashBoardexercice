@@ -1,0 +1,45 @@
+*{
+    margin: 0px ;
+    padding:0px ;
+}
+
+/* body {
+    display: flex;
+    flex-direction: column;
+    background-color: darksalmon;
+    align-items: center; 
+}  */
+
+nav {
+    display : flex ;
+    flex-direction: column;
+}
+
+nav ul{
+    display : flex ;
+    flex-direction: column;
+    position: relative;
+    background-color: aquamarine;
+    padding :5px ;
+}
+
+ul li{
+    display : flex ;
+    flex-direction: column;
+    position: relative;
+    /* float: right; */
+    display: none;
+    background-color: brown;
+    
+    }
+
+ul:hover >li{
+    display: block;
+    background-color: coral;
+}
+/* //pourquoi selecttionner li seulement ne suffit pas ?? */
+ul li:hover {
+    background-color: rgb(175, 234, 11);
+}
+      
+  
