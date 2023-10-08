@@ -31,7 +31,7 @@ header{
     display: grid;
     grid-area: header;
     grid-template-columns:  repeat(1,100% );
-    grid-template-rows:  repeat(2, 50% );
+    grid-template-rows:  repeat(2, 30% 1fr );
     grid-template-areas: 
     "header1"
     "header2" ;
