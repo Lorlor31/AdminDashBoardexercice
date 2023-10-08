@@ -7,7 +7,7 @@ body{
     display: grid;
     grid-template-rows:  repeat(10, 10dvh );
     grid-template-columns:  repeat(10,10dvw );
-    grid-template-areas: 
+    grid-template-areas:
     "menuleft menuleft header header header header header header header header"
     "menuleft menuleft header header header header header header header header"
     "menuleft menuleft main main main main main main main main"
@@ -26,30 +26,41 @@ body{
 #menu-left{
     grid-area: menuleft;
     background-color: #1992D4;
+    color: #FFFFFF ;
+}
+
+#menu-left ul, #menu-left span, #menu-left li{
+    margin: 5px ;
+    font-weight: bold;
 }
 header{
     display: grid;
     grid-area: header;
     grid-template-columns:  repeat(1,100% );
     grid-template-rows:  repeat(2, 30% 1fr );
-    grid-template-areas: 
+    grid-template-areas:
     "header1"
     "header2" ;
+    margin: 1em;
 }
 #header-first-part{
     display: grid;
     grid-template-columns:  repeat(4,25% );
     grid-template-rows:  repeat(1, 100% );
-    grid-template-areas: 
+    grid-template-areas:
     "search-bar search-bar search-bar user-login" ;
     grid-area: header1;
     background-color:#FFFFFF;
+    margin: 5px;
 }
 #header-first-part #search-field{
-    background-color: grey;
+    background-color: rgb(237, 228, 228);
     width: 800px ;
+    height: 25px;
+    margin: 5px ;
     border-radius: 5px;
-    
+    object-fit: fill;
+
 }
 #header-first-part #search-bar{
     display: flex;
@@ -59,36 +70,39 @@ header{
 #header-first-part #search-bar img{
 width: 25px;
 height: 25px;
+border: 5px rgb(122, 113, 113) solid ;
+border-radius: 50%;
+padding: 5px;
 }
 #header-first-part #user-login{
     display: flex;
     flex-direction: row;
     grid-area: user-login;
     justify-self: flex-end;
+    vertical-align: center;
 }
 
 #header-second-part{
     display: grid;
-    grid-template-columns:  repeat(2,50% );
-    grid-template-rows:  repeat(1, 100% );
-    grid-template-areas: 
-    "header2-left header2-right" ;
-    background-color:#FFFFFF;
-}
-
-#header-second-part-left{
-    display: grid;
+    grid-area: header2;
     grid-template-columns:  repeat(4,25% );
-    grid-template-rows:  repeat(1, 100% );
-    grid-template-areas: 
-    "img-cat2 user-message user-message user-message" ;
-    grid-area: header2-left;
+    grid-template-rows:  repeat(3, 33.33% );
+    grid-template-areas:
+    "img-cat2 user-message . ."
+    "img-cat2 user-message . header2-right"
+    "img-cat2  .  . . ";
+    background-color:#FFFFFF;
+    margin: 1em;
 }
 
-#header-second-part-left #img-cat2{
+/* #header-second-part-left{
+    display: grid;
+    grid-area: header2-left;
+} */
+
+#header-second-part img{
     grid-area: img-cat2;
-    width: 100px;
-    height: 100px;
+    max-height: 50%;
 }
 
 #header-second-part-left #user-message{
@@ -97,31 +111,35 @@ height: 25px;
 
 #header-second-part-right{
     display: flex;
-    flex-direction: row;
-    grid-area: header2-right;
-        justify-self: flex-end;
-}
+    flex-direction: row; 
+    align-items: center;
+    justify-content: end;
+    grid-area: header2-right;    
+} 
 
 #header-second-part-right ul{
     display: flex;
     flex-direction: row;
-
-    grid-area: header2-right;
-    background-color: aqua;
+    justify-content: end;
+    grid-area: header2-right;  
 }
 
 #header-second-part-right li{
     list-style-type: none;
     margin: 10px;
-
-    border-radius: 10px;
+    background-color:#1992D4 ;
+    color: #FFFFFF;
+    margin: 4px ;
+    padding: 15px;
+    height: 50%;
+    border-radius : 15px ;
 }
 #main-section{
     grid-area: main;
     display: grid;
     grid-template-columns: 35% 35% 30%;
     grid-template-rows:  100% ;
-    grid-template-areas: 
+    grid-template-areas:
     "projects projects aside " ;
     background-color: rgb(172, 172, 240);
 }
@@ -135,7 +153,7 @@ height: 25px;
     display: grid;
     grid-template-columns: 100% ;
     grid-template-rows:  10% 1fr ;
-    grid-template-areas: 
+    grid-template-areas:
     "h3"
     "cards"
     ;
@@ -146,8 +164,8 @@ height: 25px;
     display: grid;
     grid-template-columns: repeat(3,33%);
     grid-template-rows:  repeat(2,50%);
-    grid-template-areas: 
-    "card1 card2 card3" 
+    grid-template-areas:
+    "card1 card2 card3"
     "card4 card5 card6" ;
 
 }
@@ -194,8 +212,8 @@ height: 25px;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows:  60% 1fr ;
-    grid-template-areas: 
-    "aside1" 
+    grid-template-areas:
+    "aside1"
     "aside2" ;
 
 }
@@ -204,8 +222,8 @@ height: 25px;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows:  10% 1fr ;
-    grid-template-areas: 
-    "announcementsh3" 
+    grid-template-areas:
+    "announcementsh3"
     "announcements" ;
 }
 
@@ -221,8 +239,8 @@ height: 25px;
     grid-area: aside2;
     grid-template-columns: 100%;
     grid-template-rows:  10% 1fr ;
-    grid-template-areas: 
-    "trendingh3" 
+    grid-template-areas:
+    "trendingh3"
     "trending" ;
 }
 
@@ -234,4 +252,7 @@ height: 25px;
     grid-area: trending;
 }
 
+img{
+    margin: 5px ;
+}
 
