@@ -3,43 +3,235 @@
     padding:0px ;
 }
 
-/* body {
-    display: flex;
-    flex-direction: column;
-    background-color: darksalmon;
-    align-items: center; 
-}  */
-
-nav {
-    display : flex ;
-    flex-direction: column;
+body{
+    display: grid;
+    grid-template-rows:  repeat(10, 10dvh );
+    grid-template-columns:  repeat(10,10dvw );
+    grid-template-areas: 
+    "menuleft menuleft header header header header header header header header"
+    "menuleft menuleft header header header header header header header header"
+    "menuleft menuleft main main main main main main main main"
+    "menuleft menuleft main main main main main main main main"
+    "menuleft menuleft main main main main main main main main"
+    "menuleft menuleft main main main main main main main main"
+    "menuleft menuleft main main main main main main main main"
+    "menuleft menuleft main main main main main main main main"
+    "menuleft menuleft main main main main main main main main"
+    "menuleft menuleft main main main main main main main main"
+    "menuleft menuleft main main main main main main main main"
+    "menuleft menuleft main main main main main main main main"
+    ;
 }
 
-nav ul{
-    display : flex ;
-    flex-direction: column;
-    position: relative;
-    background-color: aquamarine;
-    padding :5px ;
+#menu-left{
+    grid-area: menuleft;
+    background-color: #1992D4;
 }
-
-ul li{
-    display : flex ;
-    flex-direction: column;
-    position: relative;
-    /* float: right; */
-    display: none;
-    background-color: brown;
+header{
+    display: grid;
+    grid-area: header;
+    grid-template-columns:  repeat(1,100% );
+    grid-template-rows:  repeat(2, 50% );
+    grid-template-areas: 
+    "header1"
+    "header2" ;
+}
+#header-first-part{
+    display: grid;
+    grid-template-columns:  repeat(4,25% );
+    grid-template-rows:  repeat(1, 100% );
+    grid-template-areas: 
+    "search-bar search-bar search-bar user-login" ;
+    grid-area: header1;
+    background-color:#FFFFFF;
+}
+#header-first-part #search-field{
+    background-color: grey;
+    width: 800px ;
+    border-radius: 5px;
     
-    }
+}
+#header-first-part #search-bar{
+    display: flex;
+    flex-direction: row;
+    grid-area: search-bar;
+}
+#header-first-part #search-bar img{
+width: 25px;
+height: 25px;
+}
+#header-first-part #user-login{
+    display: flex;
+    flex-direction: row;
+    grid-area: user-login;
+    justify-self: flex-end;
+}
 
-ul:hover >li{
-    display: block;
-    background-color: coral;
+#header-second-part{
+    display: grid;
+    grid-template-columns:  repeat(2,50% );
+    grid-template-rows:  repeat(1, 100% );
+    grid-template-areas: 
+    "header2-left header2-right" ;
+    background-color:#FFFFFF;
 }
-/* //pourquoi selecttionner li seulement ne suffit pas ?? */
-ul li:hover {
-    background-color: rgb(175, 234, 11);
+
+#header-second-part-left{
+    display: grid;
+    grid-template-columns:  repeat(4,25% );
+    grid-template-rows:  repeat(1, 100% );
+    grid-template-areas: 
+    "img-cat2 user-message user-message user-message" ;
+    grid-area: header2-left;
 }
-      
-  
+
+#header-second-part-left #img-cat2{
+    grid-area: img-cat2;
+    width: 100px;
+    height: 100px;
+}
+
+#header-second-part-left #user-message{
+    grid-area: user-message;
+}
+
+#header-second-part-right{
+    display: flex;
+    flex-direction: row;
+    grid-area: header2-right;
+        justify-self: flex-end;
+}
+
+#header-second-part-right ul{
+    display: flex;
+    flex-direction: row;
+
+    grid-area: header2-right;
+    background-color: aqua;
+}
+
+#header-second-part-right li{
+    list-style-type: none;
+    margin: 10px;
+
+    border-radius: 10px;
+}
+#main-section{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 35% 35% 30%;
+    grid-template-rows:  100% ;
+    grid-template-areas: 
+    "projects projects aside " ;
+    background-color: rgb(172, 172, 240);
+}
+
+#projects h3{
+    grid-area: h3;
+}
+
+#main-section #projects{
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: 100% ;
+    grid-template-rows:  10% 1fr ;
+    grid-template-areas: 
+    "h3"
+    "cards"
+    ;
+}
+#main-section #cards{
+
+    grid-area: cards;
+    display: grid;
+    grid-template-columns: repeat(3,33%);
+    grid-template-rows:  repeat(2,50%);
+    grid-template-areas: 
+    "card1 card2 card3" 
+    "card4 card5 card6" ;
+
+}
+
+.card{
+    background-color: deeppink;
+    margin: 5%;
+    padding: 5%;
+    border-left: solid 5px black;
+}
+
+#main-section card1{
+    grid-area:card1;
+}
+
+#main-section card2{
+    grid-area:card2;
+}
+
+#main-section card3{
+    grid-area:card3;
+}
+
+#main-section card4{
+    grid-area:card4;
+}
+
+#main-section card5{
+    grid-area:card5;
+}
+
+#main-section card6{
+    grid-area:card6;
+}
+#main-section card{
+    grid-area:cards;
+
+    grid-area: cards;
+}
+
+
+#main-section aside{
+    grid-area: aside;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows:  60% 1fr ;
+    grid-template-areas: 
+    "aside1" 
+    "aside2" ;
+
+}
+#aside-part1{
+    grid-area: aside1;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows:  10% 1fr ;
+    grid-template-areas: 
+    "announcementsh3" 
+    "announcements" ;
+}
+
+#aside-part1 #announcementsh3{
+    grid-area: announcementsh3;
+}
+
+#aside-part1 #announcements{
+    grid-area: announcements;
+}
+
+#aside-part2{
+    grid-area: aside2;
+    grid-template-columns: 100%;
+    grid-template-rows:  10% 1fr ;
+    grid-template-areas: 
+    "trendingh3" 
+    "trending" ;
+}
+
+#aside-part2 #trendingsh3{
+    grid-area: trendingh3;
+}
+
+#aside-part2 #trending{
+    grid-area: trending;
+}
+
+
