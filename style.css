@@ -29,15 +29,28 @@ body{
     color: #FFFFFF ;
 }
 
+#menu-left #menu{ 
+    font-size: xx-large ;
+    margin: 20px ;;
+}
+
+#menu-left svg{ 
+    width: 35px;
+    height: 35px;
+}
+
 #menu-left ul, #menu-left span, #menu-left li{
-    margin: 5px ;
-    font-weight: bold;
+    margin: 15px ;
+    font-weight: bold; 
+}
+#menu-left li{
+   list-style-type: none; 
 }
 header{
     display: grid;
     grid-area: header;
     grid-template-columns:  repeat(1,100% );
-    grid-template-rows:  repeat(2, 30% 1fr );
+    grid-template-rows:  repeat(2, 30% 70%);
     grid-template-areas:
     "header1"
     "header2" ;
@@ -86,7 +99,7 @@ padding: 5px;
     display: grid;
     grid-area: header2;
     grid-template-columns:  repeat(4,25% );
-    grid-template-rows:  repeat(3, 33.33% );
+    grid-template-rows:  repeat(3, 33,33% );
     grid-template-areas:
     "img-cat2 user-message . ."
     "img-cat2 user-message . header2-right"
@@ -101,12 +114,22 @@ padding: 5px;
 } */
 
 #header-second-part img{
+    position: relative;
+    left: -12px;
     grid-area: img-cat2;
-    max-height: 50%;
+    max-height: 25%;
+    max-width: 100% ;
+    border: 5px solid black;
+    border-radius: 50%;
+    padding: 10px ;
+    background-color: #d1ad6d ;
 }
 
-#header-second-part-left #user-message{
+#header-second-part #user-message{
     grid-area: user-message;
+    position: relative;
+    left: -185px;
+    
 }
 
 #header-second-part-right{
@@ -115,12 +138,14 @@ padding: 5px;
     align-items: center;
     justify-content: end;
     grid-area: header2-right;    
+    max-height: 25%;
 } 
 
 #header-second-part-right ul{
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: center;
+    align-items: flex-end;
     grid-area: header2-right;  
 }
 
@@ -131,7 +156,7 @@ padding: 5px;
     color: #FFFFFF;
     margin: 4px ;
     padding: 15px;
-    height: 50%;
+    max-height: 15%;
     border-radius : 15px ;
 }
 #main-section{
@@ -141,7 +166,7 @@ padding: 5px;
     grid-template-rows:  100% ;
     grid-template-areas:
     "projects projects aside " ;
-    background-color: rgb(172, 172, 240);
+    background-color: #E2E8F0 ;
 }
 
 #projects h3{
@@ -171,10 +196,10 @@ padding: 5px;
 }
 
 .card{
-    background-color: deeppink;
+    background-color: #FFFFFF ;
     margin: 5%;
     padding: 5%;
-    border-left: solid 5px black;
+    border-left: solid 5px #F0B429 ;
 }
 
 #main-section card1{
@@ -211,7 +236,7 @@ padding: 5px;
     grid-area: aside;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows:  60% 1fr ;
+    grid-template-rows:  70% 1fr ;
     grid-template-areas:
     "aside1"
     "aside2" ;
@@ -225,6 +250,7 @@ padding: 5px;
     grid-template-areas:
     "announcementsh3"
     "announcements" ;
+
 }
 
 #aside-part1 #announcementsh3{
@@ -233,6 +259,10 @@ padding: 5px;
 
 #aside-part1 #announcements{
     grid-area: announcements;
+    background-color: #FFFFFF;
+    margin: 15px ;
+    padding: 15px ;
+
 }
 
 #aside-part2{
@@ -242,6 +272,7 @@ padding: 5px;
     grid-template-areas:
     "trendingh3"
     "trending" ;
+
 }
 
 #aside-part2 #trendingsh3{
@@ -250,9 +281,31 @@ padding: 5px;
 
 #aside-part2 #trending{
     grid-area: trending;
+    background-color: #FFFFFF;
+    margin: 15px ;
+    padding: 15px ;
+}
+
+aside p{
+    margin: 5px ;
 }
 
 img{
     margin: 5px ;
 }
 
+svg{
+    width: 20px;
+    height:20px;
+    filter: invert(100%);
+    vertical-align: middle;
+}
+
+h3, h4{
+    margin: 10px;
+}
+
+h4{
+    font-style: oblique;
+    text-decoration: underline;
+}
